@@ -1,0 +1,191 @@
+#include <iostream>
+#include<stack>
+using namespace std;
+
+
+int main() {
+    //use of stl shortcuts
+	stack<int> s;
+	s.push(2);
+	s.push(3);
+	s.pop();
+	cout<<s.top()<<endl;
+	cout<<s.empty()<endl;
+	cout<<s.size()<<endl;
+//	cout<<s.full(); //doesnt have full method;
+//use of stl shortcuts
+	
+	
+	return 0;
+}
+
+// creating stack by class (using array ,using linked list)
+// create using array 
+
+#include <iostream>
+//#include<stack>
+using namespace std;
+
+class stack{
+    public:
+    int size;
+    int top;
+    int * arr;
+    
+    stack(int size){
+        this->size=size;
+        this->top=-1;
+        this->arr=new int[size];
+         
+    }
+
+    
+    void push(int n){
+        if(size-top>1){
+        top++;
+        arr[top]=n;
+    }
+    
+    else{
+        cout<<"stack overflow";
+    }
+    }
+    
+    void pop(){
+        if(top==-1){
+            cout<<"empty stack";
+        }
+        else{
+           
+            top--;
+        }
+        
+       
+    }
+    
+    bool isempty(){
+        if(top==-1){
+          return 1;
+        }
+        else return 0;
+        
+    }
+    
+    int topp(){
+        if(top>=0){
+            return arr[top];
+        }
+        else{
+            cout<<"stack is empty"<<endl;
+            return -1;
+        }
+    }
+};  
+    
+int main() {
+    
+    stack st(5);
+    st.push(22);
+    st.push(43);
+    st.pop();
+    cout<<st.topp()<<endl;
+    cout<<st.isempty();
+	return 0;
+}
+
+//creating stack using linked list 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//two stack using a array 
+#include <bits/stdc++.h> 
+class TwoStack {
+    // Initialize TwoStack.
+    
+          int top1;
+          int top2;
+          int size;
+          int *arr;
+    
+public:
+    TwoStack( int s){
+        this->top1=-1;
+        this->top2=s;
+        this->size=s;
+        this ->arr=new int[s];
+    }
+    
+    // Push in stack 1.
+    void push1(int num) {
+       if(top2-top1>1){
+           top1++;
+            arr[top1]=num;
+       }
+       
+    }
+
+    // Push in stack 2.
+    void push2(int num) {
+        // Write your code here.
+        if(top2-top1>1 ){
+            top2--;
+            arr[top2]=num;
+        }
+        
+
+    }
+
+    // Pop from stack 1 and return popped element.
+    int pop1() {
+        // Write your code here.
+        if(top1==-1){
+            cout<<"empty stack";
+        }
+
+        else{
+            int pop1value=arr[top1];
+            top1--;
+            return pop1value;
+        }
+    }
+
+    // Pop from stack 2 and return popped element.
+    int pop2() {
+        // Write your code here.
+           if(top2==size){
+            cout<<"empty stack";
+
+        }
+
+        else{
+            int pop2value=arr[top2];
+            top2++;
+            return pop2value;
+        }
+
+    }
+    
+};
+
+//
+
+
+
+
+
