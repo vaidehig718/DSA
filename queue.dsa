@@ -1,1 +1,31 @@
+//queue
+
+push (enqueue)
+pop  (dequeue)
+size
+isEmpty
+
+queue<int>q;
+q.push()
+q.pop()
+q.size()
+q.front()
+q.rear()
+q.empty()
+
+//deque
+
+deque<int> d;
+d.push_front(12);
+d.push_back(14);
+
+cout<<d.front()<<endl;
+cout<<d.back()<<endl;
+d.pop_back();
+d.pop_front();
+
+d.empty()
+
+
+
 
